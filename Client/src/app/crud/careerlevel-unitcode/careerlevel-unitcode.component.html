@@ -1,0 +1,51 @@
+<div class="container mt-5">
+
+
+    <div class="card">
+        <div class="container mt-5">
+            <h2>รายละเอียดหน่วยสมรรถนะ - ระดับอาชีพ</h2>
+            <form class="mb-4" (ngSubmit)="onSubmitForm()">
+                <label for="unitcode" class="form-label" >รายละเอียดหน่วยสมรรถนะ:</label>
+                <select id="unitcode" name="unitcode"  class="form-select" [(ngModel)]="formclucData.id_unit_code">
+                    <option *ngFor="let unitcode of unitcodeOptions" [value]="unitcode.id_unit_code">{{ unitcode.unit_code }} {{ unitcode.name }}</option>
+                </select>
+
+                <label for="careerlevel" class="form-label" >ระดับอาชีพ:</label>
+                <select id="careerlevel" name="careerlevel" class="form-select" [(ngModel)]="formclucData.id_career_level">
+                    <option *ngFor="let careerlevel of careerlevelOptions" [value]="careerlevel.id_career_level">{{ careerlevel.name_career }} {{ careerlevel.name_level }}</option>
+                </select>
+            
+                
+            
+                <button class="btn btn-primary mt-3" type="submit">{{ editIdcluc !== null ? 'Update' : 'Create' }}</button>
+            </form>
+            
+
+
+            <div class="container mt-5">
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>ลำดับ</th>
+                            <th>หน่วยสมรรถนะ</th>
+                            <th>ระดับอาชีพ</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let cluc of clucs">
+                            <td>{{ cluc.id_cl_uc }}</td>
+                            <td>{{ cluc.unit_code }} {{ cluc.name }}</td>
+                            <td>{{ cluc.name_career }} {{ cluc.name_level }}</td>
+                            <td>
+                                <button (click)="onEdit(cluc)" class="btn btn-warning btn-sm">Edit</button>
+                                <button (click)="onDelete(cluc.id_cl_uc)" class="btn btn-danger btn-sm ml-1">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>

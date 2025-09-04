@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="card mt-5">
+        <div class="container">
+    
+            <div class="card-body">
+                <h2>Details Management</h2>
+                <form (ngSubmit)="onSubmitDetails()" class="mt-3">
+
+                    <div class="form-group">
+                        <label for="outcomes">คุณลักษณะของผลการเรียนรู้ (Characteristics of Outcomes):</label>
+                        <textarea type="text" id="outcomes" name="outcomes" [(ngModel)]="formdetailsData.outcomes" class="form-control" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+
+                <div class="container mt-5">
+                    <table class="table table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>ลำดับ</th>
+                                <th>คุณลักษณะของผลการเรียนรู้ (Characteristics of Outcomes)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let detail of details">
+                                <td>{{ detail.id_d }}</td>
+                                <td>{{ detail.outcomes }}</td>
+                                <td>
+                                    <button (click)="editDetails(detail)" class="btn btn-warning btn-sm">Edit</button>
+                                    <button (click)="deleteDetails(detail.id_d)" class="btn btn-danger btn-sm ml-1">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>

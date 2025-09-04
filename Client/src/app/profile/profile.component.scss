@@ -1,0 +1,71 @@
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
+@import 'primeng/resources/themes/saga-blue/theme.css';
+@import 'primeng/resources/primeng.min.css';
+@import 'primeicons/primeicons.css';
+
+@import url('https://fonts.googleapis.com/css2?family=Prompt&family=Roboto&display=swap');
+
+section {
+  background-color: #eee;
+  margin-top: 5%;
+}
+
+.container {
+  width: 100%;
+  max-width: 29cm; /* A4 width */
+  margin: 0 auto;
+}
+
+.pie-chart-container {
+  max-width: 120%;
+  height: auto;
+  margin: 20px;
+}
+
+.pie-chart-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+.pie-chart-title {
+  max-width: 100%;
+  font-size: 16px;
+}
+
+.p-chart {
+
+  max-width: 120%;
+  max-height: 120%;
+}
+
+h1 {
+  font-size: 24px;
+  font-family: 'Prompt', sans-serif;
+}
+
+h2 {
+  font-size: 18px;
+  font-family: 'Prompt', sans-serif;
+}
+
+p {
+  font-size: 14px;
+  font-family: 'Prompt', sans-serif;
+}
+
+li {
+
+  font-size: 14px;
+  font-family: 'Prompt', sans-serif;
+
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,95 @@
+
+
+<app-navbar></app-navbar>
+
+
+<div class="image-container">
+  <img src="assets/TPQI.jpg" class="img-fluid less-bright" alt="Sample image">
+  <div class="overlay-text-tpqi">
+    <h1>TPQI Competency Profile System</h1>
+  </div>
+  <div class="overlay-text mt-5">
+    <h2>ระบบเทียบเคียงสมรรถนะของบุคคลกับเกณฑ์มาตรฐานสถาบันคุณวุฒิวิชาชีพ(องค์การมหาชน)</h2>
+  </div>
+</div>
+
+<section class="vh-90 w3-panel w3-border-bottom">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <h1>“มาตรฐานอาชีพ”</h1>
+        <h2>“การพัฒนาระบบคุณวุฒิวิชาชีพในประเทศไทย นำไปสู่การพัฒนาและยกระดับกำลังคนเพื่อเพิ่มขีดความสามารถในการแข่งขันของประเทศ โดยสถาบันฯ มีภารกิจในการดำเนินการสร้างการเรียนรู้ต่อระบบคุณวุฒิ
+          วิชาชีพและมาตรฐานอาชีพให้เป็นที่รู้จัก พร้อมทั้งผลักดันให้เกิดความตระหนักถึงประโยชน์ของระบบ
+          คุณวุฒิวิชาชีพ สนับสนุนให้กลุ่มผู้ประกอบอาชีพ มีส่วนร่วมในการจัดทำมาตรฐานอาชีพและคุณวุฒิ
+          วิชาชีพให้สอดคล้องตามยุทธศาสตร์ชาติ 20 ปี รวมทั้งประสานความร่วมมือกับสถานศึกษา สถาบันฝึกอบรม 
+          สถานประกอบการ และหน่วยงานอื่น ๆ ทั้งภาครัฐและภาคเอกชน ทั้งในและต่างประเทศ ให้มีการเผยแพร่
+          การใช้ระบบคุณวุฒิวิชาชีพ และนำมาตรฐานอาชีพและมาตรฐานสมรรถนะไปใช้เพื่อพัฒนาสมรรถนะบุคลากรในแต่ละสาขาวิชาชีพ”
+        </h2>
+        
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <img src="assets/engineer.jpg" class="img-fluid" alt="Sample image">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="vh-90 w3-panel">
+
+  <div class="container mt-4 ">
+    <div class="row">
+      <div class="col-md-6">
+        <label  class="custom-label" for="nameCareer">อาชีพ:</label>
+        <input id="nameCareer" [(ngModel)]="nameCareer" class="form-control form-control-lg mt-2" type="search" aria-label="Search">
+      </div>
+  
+      <div class="col-md-3">
+        <label class="custom-label" for="nameLevel">ระดับ:</label>
+        <select id="nameLevel" [(ngModel)]="nameLevel" class="form-control form-control-lg mt-2" type="search" aria-label="Search">
+          <option *ngFor="let levelOption of levelOptions" [value]="levelOption">
+            {{ levelOption }}
+          </option>
+        </select>
+      </div>
+  
+      <div class="col-md-3 text-md-right mt-4">
+        <label></label>
+        <button (click)="search()" class="btn btn-danger mt-2">Search</button>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section class="vh-90 w3-panel w3-border-top mt-5">
+  <div class="container mt-5 ">
+    <div *ngFor="let careerLevel of careerLevels; let i = index" class="circle-container">
+      <div class="index-circle">{{ careerLevel.id_career_level }}</div>
+        <div class="career-info" (click)="showCareerDetail(careerLevel.id_career_level)">
+            <p>{{ careerLevel.name_career }} {{ careerLevel.name_level }}</p>
+        </div>
+      </div>
+  </div>
+</section>
+
+
+<div class="custom-container">
+  <div class="custom-text">
+    © 2023 Department of Electrical and Computer Engineering Faculty of Engineering Naresuan University
+  </div>
+  <div class="custom-text">
+    reference <a href="https://tpqi-net.tpqi.go.th/home/occ/industrialInfo/ICT" target="_blank">สถาบันคุณวุฒิวิชาชีพ (องค์การมหาชน)</a>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

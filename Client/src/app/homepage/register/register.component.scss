@@ -1,0 +1,98 @@
+/* your-component.component.css */
+@import url('https://fonts.googleapis.com/css2?family=Prompt&family=Roboto&display=swap');
+
+.success-snackbar {
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }
+  
+  .error-snackbar {
+    background-color: #f44336; /* Red */
+    color: white;
+  }
+
+
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+// .h-custom {
+// height: calc(100% - 73px);
+// }
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
+}
+
+.img-fluid {
+  max-width: 100%;
+  width: 200px;
+  height: auto;
+  display: block;
+  margin: 0 auto; /* ทำให้ element นี้อยู่ตรงกลาง */
+}
+
+
+.custom-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 1rem; /* เพิ่มหรือลดตามความต้องการ */
+  background-color: purple;
+  color: white;
+}
+
+.custom-text {
+  margin-bottom: 0.5rem;
+}
+
+.signup-heading {
+  font-size: 2.5em; /* Adjust the font size as needed */
+  font-weight: bold; /* Optionally make the text bold */
+  color: #333; /* Set the text color */
+  margin-bottom: 20px; /* Add some bottom margin for spacing */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+
+
+h3 {
+
+  font-size: 18px; 
+  font-family: 'Prompt', sans-serif;
+}
+
+a {
+
+  font-size: 16px; 
+  font-family: 'Prompt', sans-serif;
+}
+
+p {
+
+  font-size: 16px; 
+  font-family: 'Prompt', sans-serif;
+}
+
+button {
+  font-size: 16px; 
+  font-family: 'Prompt', sans-serif;
+}
+
+label {
+  font-size: 16px; 
+  font-family: 'Prompt', sans-serif;
+}
+
+input {
+  font-size: 16px; 
+  font-family: 'Prompt', sans-serif;
+}

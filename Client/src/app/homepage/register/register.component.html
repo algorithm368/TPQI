@@ -1,0 +1,95 @@
+
+
+<app-navbar></app-navbar>
+
+<section style="background-color: #eee;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card shadow-2-strong" style="border-radius: 1rem;">
+          <div class="card-body p-5 ">
+            <img src="assets/login.jpg" class="img-fluid" alt="Sample image" width="300" height="200">
+
+
+            <h3 class="mb-5 text-center">Sign Up</h3>
+
+            <form (ngSubmit)="register()" class="mt-5">
+              <div class="form-outline">
+                <label class="form-label mt-3" for="id">รหัสนิสิต:</label>
+                <input type="text" id="id" name="id" [(ngModel)]="userData.id"  class="form-control form-control" required>
+              </div>
+              
+              <div class="form-outline">
+                <label class="form-label mt-3" for="email">อีเมล:</label>
+                <input type="email" id="email" name="email" [(ngModel)]="userData.email" class="form-control form-control" required>
+              </div>
+    
+              <div class="form-outline">
+                <label class="form-label mt-3" for="password">รหัสผ่าน:</label>
+                <input type="password" id="password" name="password" [(ngModel)]="userData.password" class="form-control form-control" required>
+              </div>
+
+              <div class="form-outline">
+                <label class="form-label mt-3" for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="userData.confirmPassword" class="form-control form-control" required>
+              </div>
+
+              <div *ngIf="passwordsDoNotMatch" class="error-message">
+                Password and Confirm Password do not match.
+              </div>
+              
+              <div class="form-outline">
+                <label class="form-label mt-3" for="firstNameTH">ชื่อ(ไทย):</label>
+                <input type="text" id="firstNameTH" name="firstNameTH" [(ngModel)]="userData.firstNameTH" class="form-control form-control" required>
+              </div>
+    
+              <div class="form-outline">
+                <label class="form-label mt-3" for="lastNameTH">นามสกุล(ไทย):</label>
+                <input type="text" id="lastNameTH" name="lastNameTH" [(ngModel)]="userData.lastNameTH" class="form-control form-control" required>
+              </div>
+    
+              <div class="form-outline">
+                <label class="form-label mt-3" for="firstNameEN">ชื่อ(อังกฤษ):</label>
+                <input type="text" id="firstNameEN" name="firstNameEN" [(ngModel)]="userData.firstNameEN" class="form-control form-control" required>
+              </div>
+              
+              <div class="form-outline">
+                <label class="form-label mt-3" for="lastNameEN">นามสกุล(อังกฤษ):</label>
+                <input type="text" id="lastNameEN" name="lastNameEN" [(ngModel)]="userData.lastNameEN" class="form-control form-control" required>
+              </div>
+    
+              <div class="form-outline">
+                <label class="form-label mt-3" for="phone">เบอร์โทร:</label>
+                <input type="text" id="phone" name="phone" [(ngModel)]="userData.phone" class="form-control form-control" required>
+              </div>
+              <div class="form-outline">
+                <label class="form-label mt-3" for="line">ไลน์:</label>
+                <input type="text" id="line" name="line" [(ngModel)]="userData.line" class="form-control form-control" required>
+              </div>
+              
+              <div class="form-outline">
+                <label class="form-label mt-3" for="address">ที่อยู่:</label>
+                <textarea type="text" id="address" name="address" [(ngModel)]="userData.address"  class="form-control form-control" required ></textarea>
+              </div>
+              <div class="text-center text-lg-start mt-4 pt-2">
+                <button type="submit" class="btn btn-danger"
+                  style="padding-left: 2.5rem; padding-right: 2.5rem;">สมัครสมาชิก </button>
+                  <p class="small fw-bold mt-2 pt-1 mb-0">มีบัญชี ? <a routerLink="/login"
+                    class="link-danger">เข้าสู่ระบบ</a></p>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+      document.querySelector('h1').classList.add('fade-in');
+    }, 500); // Adjust the delay (in milliseconds) as needed
+  });
+</script>

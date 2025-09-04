@@ -1,0 +1,103 @@
+
+
+<!-- <section class="vh-100">
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+ 
+        <div class="col-md-8 col-lg-6 col-xl-4 ">
+          <img src="assets/login.jpg" class="img-fluid" alt="Sample image">
+          <form (submit)="loginUser()">
+  
+
+            <div class="form-outline mb-4">
+              <input type="email" id="email" [(ngModel)]="email" name="email" class="form-control form-control-lg"
+                placeholder="ระบุอีเมล" />
+              <label class="form-label mt-3" for="email">ชื่อผู้ใช้งาน/อีเมล</label>
+            </div>
+
+            <div class="form-outline mb-3">
+              <input type="password" id="password" [(ngModel)]="password" name="password" class="form-control form-control-lg"
+                placeholder="ระบุรหัสผ่าน" />
+              <label class="form-label mt-3" for="form3Example4">รหัสผ่าน</label>
+            </div>
+  
+            <div class="d-flex justify-content-between align-items-center">
+              
+              <a href="#!" class="text-body">ลืมรหัสผ่าน ?</a>
+            </div>
+  
+            <div class="text-center text-lg-start mt-4 pt-2">
+              <button type="submit" class="btn btn-primary"
+                style="padding-left: 2.5rem; padding-right: 2.5rem;">เข้าสู่บัญชีของคุณ</button>
+              <p class="small fw-bold mt-2 pt-1 mb-0">ไม่ได้มีบัญชี ? <a routerLink="/register"
+                  class="link-danger">สมัครสมาชิก</a></p>
+            </div>
+  
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </section> -->
+
+<app-navbar></app-navbar>
+
+
+<section style="background-color: #eee;">
+  <div class="container py-5">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card shadow-2-strong" style="border-radius: 1rem; background-color: #ffffff;">
+          <div class="card-body p-5 ">
+            <img src="assets/login.jpg" class="img-fluid" alt="Sample image">
+
+            <h3 class="mt-2 mb-1 text-center">Sign in</h3>
+
+            <form (submit)="loginUser()">
+  
+              <!-- Email input -->
+              <div class="form-outline mb-2">
+                <label class="form-label mt-3 " for="email">ชื่อผู้ใช้งาน/อีเมล</label>
+                <input type="email" id="email" [(ngModel)]="email" name="email" class="form-control form-control-lg"
+                  placeholder="อีเมล" />
+              </div>
+    
+              <!-- Password input -->
+              <div class="form-outline mb-3">
+                <label class="form-label mt-3" for="form3Example4">รหัสผ่าน</label>
+                <input type="password" id="password" [(ngModel)]="password" name="password" class="form-control form-control-lg"
+                  placeholder="รหัสผ่าน" />
+
+              </div>
+              <div *ngIf="incorrectPassword" class="error-message">
+                อีเมล หรือ รหัสผ่านไม่ถูกต้อง
+              </div>
+    
+              <div class="d-flex justify-content-between align-items-center">
+              
+                <!-- <a routerLink="/forgot-password" class="text-body">ลืมรหัสผ่าน ?</a> -->
+                <a (click)="navigateToForgotPassword()" class="text-body">ลืมรหัสผ่าน ?</a>
+              </div>
+    
+              <div class="d-flex justify-content-center text-center text-lg-start mt-3 pt-2">
+                <button type="submit" class="btn btn-danger"
+                  style="padding-left: 2.5rem; padding-right: 2.5rem;">เข้าสู่บัญชีของคุณ</button>
+              </div>
+              <p class="small fw-bold mt-2 pt-1 mb-0 text-center">
+                ไม่ได้มีบัญชี ? <a routerLink="/register" class="link-danger">สมัครสมาชิก</a>
+              </p>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+  
+  
+  

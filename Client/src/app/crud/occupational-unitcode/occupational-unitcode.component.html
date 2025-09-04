@@ -1,0 +1,53 @@
+<div class="container mt-5">
+
+
+    <div class="card">
+        <div class="container mt-5">
+            <h2>Level Management</h2>
+            <form class="mb-4" (ngSubmit)="onSubmitForm()">
+
+                <label for="occupational" class="form-label">สำหรับชื่ออาชีพและรหัสอาชีพ:</label>
+                <select id="occupational" name="occupational" class="form-select" [(ngModel)]="formuoccupationalData.id_occupational">
+                <option *ngFor="let occupational of occupationalOptions" [value]="occupational.id_occupational">
+                    {{ occupational.name_occupational }} </option>
+                </select>
+
+                <label for="unitcode" class="form-label">หน่วยสมรรถนะ:</label>
+                <select id="unitcode" name="unitcode" class="form-select" [(ngModel)]="formuoccupationalData.id_unit_code">
+                <option *ngFor="let unitcode of unitcodeOptions" [value]="unitcode.id_unit_code">{{ unitcode.unit_code }} {{ unitcode.name }}</option>
+                </select>
+
+                
+            
+
+            
+                <button class="btn btn-primary mt-3" type="submit">{{ editIduoccupational !== null ? 'Update' : 'Create' }}</button>
+            </form>
+
+            <div class="container mt-5">
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>สำหรับชื่ออาชีพและรหัสอาชีพ</th>
+                            <th>หน่วยสมรรถนะ</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let uoccupational of uoccupationals">
+                            <td>{{ uoccupational.id_unit_occupational }}</td>
+                            <td>{{ uoccupational.name_occupational }}</td>
+                            <td>{{ uoccupational.unit_code }} {{ uoccupational.name }}</td>
+                            <td>
+                                <button (click)="onEdit(uoccupational)" class="btn btn-warning btn-sm">Edit</button>
+
+                                <button (click)="onDelete(uoccupational.id_unit_occupational)" class="btn btn-danger btn-sm ml-1" >Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

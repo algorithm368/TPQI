@@ -1,0 +1,69 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Prompt&family=Roboto&display=swap');
+
+
+
+.img-fluid {
+  max-width: 100%;
+  width: 200px;
+  height: auto;
+  display: block;
+  margin: 0 auto; /* ทำให้ element นี้อยู่ตรงกลาง */
+}
+
+
+
+.custom-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 1rem; /* เพิ่มหรือลดตามความต้องการ */
+  background-color: purple;
+  color: white;
+}
+
+.custom-text {
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+
+  font-size: 18px; 
+  font-family: 'Prompt', sans-serif;
+}
+
+a {
+
+  font-size: 16px; 
+  font-family: 'Prompt', sans-serif;
+}
+
+p {
+
+  font-size: 16px; 
+  font-family: 'Prompt', sans-serif;
+}
+
+button {
+  font-size: 16px; 
+  font-family: 'Prompt', sans-serif;
+}
+
+label {
+  font-size: 16px; 
+  font-family: 'Prompt', sans-serif;
+}
+
+input {
+  font-size: 16px; 
+  font-family: 'Prompt', sans-serif;
+}
+
+.error-message {
+  color: red;
+  margin-top: 5px;
+}

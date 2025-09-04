@@ -1,0 +1,52 @@
+ 
+<div class="container mt-5">
+ 
+    <div class="card">
+        <div class="container mt-5">
+            <h2>Level Management</h2>
+            <form class="mb-4" (ngSubmit)="onSubmitForm()">
+
+                <label for="unitcode" class="form-label">หน่วยสมรรถนะ:</label>
+                <select id="unitcode" name="unitcode" class="form-select" [(ngModel)]="formuknowlegeData.id_unit_code">
+                <option *ngFor="let unitcode of unitcodeOptions" [value]="unitcode.id_unit_code">{{ unitcode.unit_code }} {{ unitcode.name }}</option>
+                </select>
+
+                <label for="knowlege" class="form-label">ความรู้:</label>
+                <select id="knowlege" name="knowlege" class="form-select" [(ngModel)]="formuknowlegeData.id_knowlege">
+                <option *ngFor="let knowlege of knowlegeOptions" [value]="knowlege.id_knowlege">
+                    {{ knowlege.name_knowlege }} </option>
+                </select>
+            
+    
+            
+                <button class="btn btn-primary mt-3" type="submit">{{ editIduknowlege !== null ? 'Update' : 'Create' }}</button>
+            </form>
+            
+
+            <div class="container mt-4">
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>หน่วยสมรรถนะ</th>
+                            <th>ความรู้</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let uknowledge of uknowledges">
+                            <td>{{ uknowledge.id_u_knowlege }}</td>
+                            <td>{{ uknowledge.unit_code }} {{ uknowledge.name }}</td>
+                            <td>{{ uknowledge.name_knowlege }}</td>
+                            <td>
+                                <button (click)="onEdit(uknowledge)" class="btn btn-warning btn-sm" >Edit</button>
+
+                                <button (click)="onDelete(uknowledge.id_u_knowlege)" class="btn btn-danger btn-sm ml-1">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

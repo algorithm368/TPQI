@@ -1,0 +1,39 @@
+
+
+<nav class="navbar navbar-expand-lg navbar-custom">
+  <div class="container">
+    <a class="navbar-brand" routerLink="#">
+    <span style="color: #560C06; font-size: 40px; font-family: 'Prompt', sans-serif;">T</span>
+    <span style="color: #84180E; font-size: 40px; font-family: 'Prompt', sans-serif;" >P</span>
+    <span style="color: #B5251A; font-size: 40px; font-family: 'Prompt', sans-serif;" >Q</span>
+    <span style="color: #E33122; font-size: 40px; font-family: 'Prompt', sans-serif;" >I</span></a>
+    <a class="navbar-brand" routerLink="#">
+      <p style="color: #560C06; font-size: 12px; font-family: 'Prompt', sans-serif;" >Competency Profile System</p>
+      <p style="color: #84180E; font-size: 10px; font-family: 'Prompt', sans-serif;" >ระบบเทียบเคียงสมรรถนะของบุคคลกับเกณฑ์</p>
+      <p style="color: #B5251A; font-size: 10px; font-family: 'Prompt', sans-serif;" >มาตรฐานสถาบันคุณวุฒิวิชาชีพ (องค์การมหาชน)</p>  
+    </a>
+ 
+    <button class="navbar-toggler" type="button" id="navbar" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item" *ngIf="!isLoggedIn()">
+          <a class="nav-link custom-link" routerLink="/login">เข้าสู่ระบบ</a>
+        </li>
+        <li class="nav-item" *ngIf="isLoggedIn()">
+          <a class="nav-link custom-link" (click)="logout()">ออกจากระบบ</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+  
+ 

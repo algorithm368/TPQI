@@ -1,0 +1,57 @@
+<app-navbar-admin></app-navbar-admin>
+
+
+<!-- <div class="row">
+    <div class="col-3" style="background-color: rgb(201, 197, 197);">
+        <div class="card-body m-5">
+            <p>อาชีพ</p>
+            <p>ระดับอาชีพ</p>
+            <p>รายละเอียดของระดับอาชีพ</p>
+            <p>รายละเอียดหน่วยสมรรถนะ</p>
+            <p>สำหรับชื่ออาชีพและรหัสอาชีพ</p>
+            <p>กลุ่มอาชีพ (Sector)</p>
+            <p>ทักษะ</p>
+            <p>ความรู้</p>
+            <p>รายละเอียดหน่วยสมรรถนะ - ทักษะ</p>
+            <p>รายละเอียดหน่วยสมรรถนะ - ความรู้</p>
+            <p>ระดับอาชีพ - ทักษะ</p>
+            <p>ระดับอาชีพ - ความรู้</p>
+
+        </div>
+    </div>
+    <div class="col-9">
+    <app-all-crud></app-all-crud>
+    </div>
+
+</div> -->
+<mat-tab-group>
+    <mat-tab label="อาชีพ"><app-career></app-career></mat-tab>
+    <mat-tab label="ระดับอาชีพ"><app-career-level></app-career-level></mat-tab>
+
+    <mat-tab label="รายละเอียดของระดับอาชีพ"><app-details></app-details></mat-tab>
+    <mat-tab label="รายละเอียดของระดับอาชีพ - ระดับอาชีพ"><app-all-details></app-all-details></mat-tab>
+
+
+    
+    <mat-tab label="รายละเอียดหน่วยสมรรถนะ"><app-unitcode></app-unitcode></mat-tab>
+    <mat-tab label="รายละเอียดหน่วยสมรรถนะ - ระดับอาชีพ"><app-careerlevel-unitcode></app-careerlevel-unitcode></mat-tab>
+
+    <mat-tab label="สำหรับชื่ออาชีพและรหัสอาชีพ"><app-occupational></app-occupational></mat-tab>
+    <mat-tab label="กลุ่มอาชีพ"><app-sector></app-sector></mat-tab>
+
+    <mat-tab label="สำหรับชื่ออาชีพและรหัสอาชีพ - รายละเอียดหน่วยสมรรถนะ"><app-occupational-unitcode></app-occupational-unitcode></mat-tab>
+    <mat-tab label="กลุ่มอาชีพ - รายละเอียดหน่วยสมรรถนะ"><app-sector-unitcode></app-sector-unitcode></mat-tab>
+
+    <mat-tab label="ทักษะ"><app-skill></app-skill></mat-tab>
+    <mat-tab label="ความรู้"><app-knowledge></app-knowledge></mat-tab>>
+
+    
+    <mat-tab label="รายละเอียดหน่วยสมรรถนะ - ทักษะ"><app-skill-unitcode></app-skill-unitcode></mat-tab>
+    <mat-tab label="รายละเอียดหน่วยสมรรถนะ - ความรู้"><app-knowledge-unitcode></app-knowledge-unitcode></mat-tab>
+    
+
+    <mat-tab label="ระดับอาชีพ - ทักษะ"><app-careerlevel-skill></app-careerlevel-skill></mat-tab>
+    <mat-tab label="ระดับอาชีพ - ความรู้"><app-careerlevel-knowledge></app-careerlevel-knowledge></mat-tab>
+
+</mat-tab-group>
+

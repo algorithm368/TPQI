@@ -1,0 +1,147 @@
+
+<app-navbar></app-navbar>
+
+
+<div class="image-container">
+  <div>
+    <img src="assets/career_1.png" class="img-fluid less-bright" alt="Sample image">
+    <div class="overlay-text">
+      <h1>คุณวุฒิวิชาชีพ</h1>
+    </div>
+    <div class="overlay-text">
+      <p>คุณวุฒิวิชาชีพ</p>
+    </div>
+  </div>
+</div>
+<section>
+<section>
+  <div *ngIf="unitcode">
+    <div class="card">
+      <div class="container">
+        <div class="card">
+          <div class="container">
+            <h2>รายละเอียดหน่วยสมรรถนะ</h2>
+            <h3>1. รหัสหน่วยสมรรถนะ</h3>
+            <p>{{ unitcode.unit_code }}</p>
+            <h3>2. ชื่อหน่วยสมรรถนะ</h3>
+            <p>{{ unitcode.name }}</p>
+            <h3>3. สำหรับชื่ออาชีพและรหัสอาชีพ (Occupational Classification)</h3>
+            <div *ngIf="occupationalData">
+              <div *ngFor="let item of occupationalData.name_occupational">
+                <p>{{ item.name_occupational }}</p>
+              </div>
+            </div>
+            <h3>4. คำอธิบายหน่วยสมรรถนะ (Description of Unit of Competency)</h3>
+            <p>{{ unitcode.description_unitcode }}</p>
+
+            <h3>5. กลุ่มอาชีพ (Sector)</h3>
+            <div *ngIf="sectorData">
+              <div *ngFor="let item of sectorData.name_sector">
+                <p>{{ item.name_sector }}</p>
+              </div>
+            </div>
+            <h3>6. ทักษะและความรู้ที่ต้องการ (Required Skills and Knowledge)</h3>
+            <p>(ก) ความต้องการด้านทักษะ</p>
+
+
+            <div *ngFor="let skill of unitcode.name_skills; let i = index" >
+              <div class="row">
+                <div class="col-md-6" (click)="toggleSkillForm(i)">
+                    <span>{{ i + 1 }}. {{ skill?.name_skill }}</span>
+                </div>
+                
+                <div class="col-md-5" *ngIf="getusersSkillsData" (click)="toggleSkillForm(i)">
+                    <ng-container *ngFor="let userSkill of getusersSkillsData.name_skills">
+                      <ng-container *ngIf="userSkill?.id_skill === skill?.id_skill">
+                        <div class="row">
+                            <div class="col-md-10">
+                                {{ userSkill?.link_skill }}
+                            </div>
+                            <div class="col-md-2">
+                              <button class="btn btn-danger" (click)="editSkill(i, userSkill)">แก้ไข</button>&nbsp;&nbsp;
+                              
+                          </div>
+                        </div>
+                      </ng-container>
+                    </ng-container>
+                </div>
+                <div class="col-md-1" *ngIf="getusersSkillsData">
+                  <ng-container *ngFor="let userSkill of getusersSkillsData.name_skills">
+                    <ng-container *ngIf="userSkill?.id_skill === skill?.id_skill">
+                      <button class="btn btn-danger" (click)="deleteSkill(skill.id_skill)">ลบ</button>
+                    </ng-container>
+                  </ng-container>
+                </div>
+                
+              </div>
+            
+              <div class="card-body">
+                <form *ngIf="showSkillForm[i]" #skillForm="ngForm" (ngSubmit)="submitForm(skillForm, skill)">
+                  <label class="mb-2" for="link_skill">หลักฐาน:</label>
+                  <input type="text" id="link_skill" [(ngModel)]="editMode ? editedLink : profileSkillData.link_skill" name="link_skill" class="form-control mb-2" required>
+                  <button class="btn btn-danger me-auto"
+                  style="padding-left: 2.5rem; padding-right: 2.5rem;" type="submit">{{ editMode ? 'อัปเดต' : 'เพิ่มหลักฐาน' }}</button>
+                </form>
+              </div>
+              <hr>
+            </div>
+
+            <p>(ข) ความต้องการด้านความรู้</p>
+  
+            <div *ngFor="let knowledge of unitcode.name_knowlege; let i = index">
+              <div class="row">
+                <div class="col-md-6" (click)="toggleKnowledgeForm(i)">
+                  <span>{{ i + 1 }}. {{ knowledge?.name_knowlege }}</span>
+                </div>
+                <div class="col-md-5" *ngIf="getusersKnowledgeData" (click)="toggleKnowledgeForm(i)">
+                    <ng-container *ngFor="let userKnowledge of getusersKnowledgeData.name_knowlege">
+                      <ng-container *ngIf="userKnowledge?.id_knowlege === knowledge?.id_knowlege">
+                        <div class="row">
+                          <div class="col-md-10">
+                            {{ userKnowledge?.link_knowlege }}
+                          </div>
+                          <div class="col-md-2">
+                            <button class="btn btn-danger" (click)="editKnowledge(i, userKnowledge)">แก้ไข</button>&nbsp;&nbsp;
+                            
+                          </div>
+                        </div>
+                      </ng-container>
+                    </ng-container>
+                </div>
+                <div class="col-md-1" *ngIf="getusersKnowledgeData">
+                  <ng-container *ngFor="let userKnowledge of getusersKnowledgeData.name_knowlege">
+                    <ng-container *ngIf="userKnowledge?.id_knowlege === knowledge?.id_knowlege">
+                      <button class="btn btn-danger" (click)="deleteKnowledge(knowledge.id_knowlege)">ลบ</button>
+                    </ng-container>
+                  </ng-container>
+                </div>
+              </div>
+              <div class="card-body">
+                <form *ngIf="showKnowledgeForm[i]" #knowledgeForm="ngForm" (ngSubmit)="submitFormKnowledge(knowledgeForm, knowledge)">
+                  <label class="mb-2" for="link_knowlege">หลักฐาน:</label>
+                  <input type="text" id="link_knowlege" [(ngModel)]="editMode ? editedLink : profileKnowledgeData.link_knowlege" name="link_knowlege" class="form-control mb-2" required>
+                  <button class="btn btn-danger me-auto"
+                  style="padding-left: 2.5rem; padding-right: 2.5rem;" type="submit">{{ editMode ? 'อัปเดต' : 'เพิ่มหลักฐาน' }}</button>
+                </form>
+              </div>
+              <hr>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="custom-container">
+  <div class="custom-text">
+    © 2023 Department of Electrical and Computer Engineering Faculty of Engineering Naresuan University
+  </div>
+  <div class="custom-text">
+    reference <a href="https://tpqi-net.tpqi.go.th/home/occ/industrialInfo/ICT" target="_blank">สถาบันคุณวุฒิวิชาชีพ (องค์การมหาชน)</a>
+  </div>
+</div>
+
+
+
+

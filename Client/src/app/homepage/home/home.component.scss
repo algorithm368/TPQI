@@ -1,0 +1,161 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Prompt&family=Roboto&display=swap');
+
+.circle-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* Adjust margin as needed */
+}
+
+.index-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px; /* Increase circle size */
+  height: 40px; /* Increase circle size */
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+  color: #9b9b9b;
+  margin-right: 10px;
+  border: 2px solid #9b9b9b;
+  font-size: 16px; /* Increase font size */
+  font-family: 'Prompt', sans-serif; /* Change font family */
+}
+
+.career-info {
+  display: flex;
+  align-items: center;
+}
+
+.career-info p {
+  margin: 0;
+  font-size: 18px; /* Adjust font size for career information */
+  font-family: 'Prompt', sans-serif; /* Change font family */
+}
+
+.less-bright {
+  filter: brightness(0.7); /* Adjust the value as needed (0.7 means 70% brightness) */
+}
+
+
+/* src/app/some-folder/your-html-file.scss */
+
+.image-container {
+  position: relative;
+  display: inline-block; /* Ensure the container wraps around the image */
+}
+
+.overlay-text-tpqi {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 45%; /* Adjust the top position as needed */
+  left: 50%; /* Adjust the left position as needed */
+  transform: translate(-50%, -50%); /* Center the text */
+  color: white; /* Set text color */
+  text-align: center;
+  font-size: 24px; /* Adjust the font size as needed */
+  font-weight: bold; /* Optionally set font weight */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optionally add text shadow for better visibility */
+  font-family: 'Prompt', sans-serif; /* Change font family */
+}
+
+.overlay-text {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 50%; /* Adjust the top position as needed */
+  left: 50%; /* Adjust the left position as needed */
+  transform: translate(-50%, -50%); /* Center the text */
+  color: white; /* Set text color */
+  text-align: center;
+  font-size: 24px; /* Adjust the font size as needed */
+  font-weight: bold; /* Optionally set font weight */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optionally add text shadow for better visibility */
+  font-family: 'Prompt', sans-serif; /* Change font family */
+}
+
+.overlay-text-tpqi h1 {
+  font-size: 28px;
+  font-family: 'Georgia', sans-serif;
+  line-height: 1.5; /* Adjust the line height */
+}
+
+.overlay-text h2 {
+  width: auto;
+  font-size: 22px;
+  font-family: 'Prompt', sans-serif;
+  line-height: 1.5; /* Adjust the line height */
+}
+
+.custom-label {
+  font-size: 18px;
+  font-family: 'Prompt', sans-serif;
+}
+
+h1 {
+  font-size: 24px;
+  font-family: 'Prompt', sans-serif;
+}
+
+h2 {
+  font-size: 18px;
+  font-family: 'Prompt', sans-serif;
+}
+
+a {
+  color: #ffffff;
+}
+
+option {
+  font-size: 18px;
+  font-family: 'Prompt', sans-serif;
+}
+
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+.h-custom {
+height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
+}
+
+
+.purple-button {
+  background-color: purple;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.custom-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 1rem; /* เพิ่มหรือลดตามความต้องการ */
+  background-color: #B5251A;
+  color: white;
+}
+
+.custom-text {
+  margin-bottom: 0.5rem;
+}
+
+
+
+
+

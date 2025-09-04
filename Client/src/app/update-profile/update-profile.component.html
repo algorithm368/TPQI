@@ -1,0 +1,173 @@
+
+
+<!-- <div class="container">
+    <h2>Edit Profile</h2>
+    <div *ngIf="userProfile">
+
+        <img [src]="'http://localhost:3000/uploads/' + userProfile.profileimage" alt="User Profile Image"
+        class="rounded mx-auto d-block mt-4" style="width: 150px; height: 200px;">
+
+        <input type="file" (change)="onFileChange($event)" accept="image/*" class="mt-5">
+        <button (click)="uploadProfileImage()">Upload Image</button>
+    </div>
+    <div *ngIf="userProfile">
+
+
+        <form (ngSubmit)="updateProfile()" #profileForm="ngForm">
+
+            <div class="form-outline">
+                <label  for="id">ID Student:</label>
+                <input type="text" id="id" name="id"  placeholder="{{ userProfile.id }}">
+              </div>
+              
+              <div class="form-outline">
+                <label  for="email">Email:</label>
+                <input type="email" id="email" name="email"  placeholder="{{ userProfile.email }}">
+              </div>
+    
+
+            <div class="form-group">
+                <label for="firstNameTH">First Name (TH)</label>
+                <input type="text" id="firstNameTH" name="firstNameTH" [(ngModel)]="userProfile.firstNameTH" [readonly]="!isEditMode">
+            </div>
+    
+            <div class="form-group">
+                <label for="lastNameTH">Last Name (TH)</label>
+                <input type="text" id="lastNameTH" name="lastNameTH" [(ngModel)]="userProfile.lastNameTH" [readonly]="!isEditMode">
+            </div>
+    
+            <div class="form-group">
+                <label for="firstNameEN">First Name (EN)</label>
+                <input type="text" id="firstNameEN" name="firstNameEN" [(ngModel)]="userProfile.firstNameEN" [readonly]="!isEditMode">
+            </div>
+    
+            <div class="form-group">
+                <label for="lastNameEN">Last Name (EN)</label>
+                <input type="text" id="lastNameEN" name="lastNameEN" [(ngModel)]="userProfile.lastNameEN" [readonly]="!isEditMode">
+            </div>
+    
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" [(ngModel)]="userProfile.phone" [readonly]="!isEditMode">
+            </div>
+    
+            <div class="form-group">
+                <label for="line">Line</label>
+                <input type="text" id="line" name="line" [(ngModel)]="userProfile.line" [readonly]="!isEditMode">
+            </div>
+    
+            <div class="form-group">
+                <label for="address">Address</label>
+                <textarea id="address" name="address" [(ngModel)]="userProfile.address" [readonly]="!isEditMode"></textarea>
+            </div>
+    
+            <button *ngIf="!isEditMode" (click)="toggleEditMode()">Edit</button>
+            <button (click)="updateProfile()" [disabled]="!isEditMode">Update Profile</button>
+        </form>
+    </div>
+
+</div> -->
+
+
+<app-navbar></app-navbar>
+
+<div class="container mt-5">
+    <div class="row gutters">
+        <div class="col-xl-4 col-lg-3 col-md-12 col-sm-12 col-12">
+            <div class="card">
+                <div class="card-body m-4">
+                    <div class="account-settings">
+                        <div class="user-profile">
+                            <div *ngIf="userProfile">
+                                <img [src]="'http://localhost:3000/uploads/' + userProfile.profileimage" alt="User Profile Image"
+                                class="rounded mx-auto d-block mt-4" style="width: 150px; height: 200px;">
+
+                                <div class="mb-3">
+                                    <label for="fileInput" class="form-label">เลือกไฟล์รูปภาพ :</label>
+                                    <input type="file" class="form-control" id="fileInput" (change)="onFileChange($event)" accept="image/*">
+                                </div>
+                                
+                                <button type="button" class="btn btn-danger" (click)="uploadProfileImage()">Upload Image</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-8 col-lg-9 col-md-12 col-sm-12 col-12">
+            <div class="card h-100">
+                <div class="card-body m-4">
+                    <div *ngIf="userProfile">
+                        
+                        <form (ngSubmit)="updateProfile()" #profileForm="ngForm">
+                            <div class="row gutters">
+                                <div class="col-md-6">
+                                    <div class="form-outline mb-3">
+                                        <label  for="id" class="mb-3">ID Student :</label>
+                                        <input class="form-control" type="text" id="id" name="id"  placeholder="{{ userProfile.id }}">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-outline mb-3">
+                                        <label  for="email" class="mb-3">Email :</label>
+                                        <input class="form-control" type="email" id="email" name="email"  placeholder="{{ userProfile.email }}">
+                                    </div>
+                                </div>
+                        
+                                <div class="col-md-6">
+                                    <div class="form-outline mb-3">
+                                        <label for="firstNameTH" class="mb-3">First Name (TH) :</label>
+                                        <input class="form-control" type="text" id="firstNameTH" name="firstNameTH" [(ngModel)]="userProfile.firstNameTH" [readonly]="!isEditMode">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-outline mb-3">
+                                        <label for="lastNameTH" class="mb-3">Last Name (TH) :</label>
+                                        <input class="form-control" type="text" id="lastNameTH" name="lastNameTH" [(ngModel)]="userProfile.lastNameTH" [readonly]="!isEditMode">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-outline mb-3">
+                                        <label for="firstNameEN" class="mb-3">First Name (EN) :</label>
+                                        <input class="form-control" type="text" id="firstNameEN" name="firstNameEN" [(ngModel)]="userProfile.firstNameEN" [readonly]="!isEditMode">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-outline mb-3">
+                                        <label for="lastNameEN" class="mb-3">Last Name (EN) :</label>
+                                        <input class="form-control" type="text" id="lastNameEN" name="lastNameEN" [(ngModel)]="userProfile.lastNameEN" [readonly]="!isEditMode">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-outline mb-3">
+                                        <label for="phone" class="mb-3">Phone :</label>
+                                        <input class="form-control" type="tel" id="phone" name="phone" [(ngModel)]="userProfile.phone" [readonly]="!isEditMode">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-outline mb-3">
+                                        <label for="line" class="mb-3">Line :</label>
+                                        <input class="form-control" type="text" id="line" name="line" [(ngModel)]="userProfile.line" [readonly]="!isEditMode">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-outline mb-3">
+                                        <label for="address" class="mb-3">Address :</label>
+                                        <textarea class="form-control" id="address" name="address" [(ngModel)]="userProfile.address" [readonly]="!isEditMode"></textarea>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-end mt-4">
+                                    <button *ngIf="!isEditMode" type="button" (click)="toggleEditMode()" class="btn btn-primary ms-auto">Edit</button>&nbsp;
+                                    <button type="button" (click)="updateProfile()" [disabled]="!isEditMode" class="btn btn-success">Update Profile</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+  
+  

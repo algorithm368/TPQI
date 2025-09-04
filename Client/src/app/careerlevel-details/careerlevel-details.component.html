@@ -1,0 +1,77 @@
+<app-navbar></app-navbar>
+
+<div class="image-container">
+  <div>
+    <img src="assets/career_1.png" class="img-fluid less-bright" alt="Sample image">
+    <div class="overlay-text">
+      <h1>คุณวุฒิวิชาชีพ</h1>
+    </div>
+    <div class="overlay-text">
+      <p>คุณวุฒิวิชาชีพ</p>
+    </div>
+  </div>
+</div>
+<section>
+  <div class="card-overlay">
+    <div class="card">
+      <div class="container">
+        <div class="card">
+          <div class="container">
+            <div *ngIf="careerLevel">
+              <h2>{{ careerLevel.name_career }} {{ careerLevel.name_level }}</h2>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="container">
+            <div *ngIf="careerLevel">
+              <h2>รายละเอียด</h2>
+              <h3>คุณวุฒิวิชาชีพ</h3>
+              <p>{{ careerLevel.name_career }} {{ careerLevel.name_level }}</p>
+              <h3>คุณลักษณะของผลการเรียนรู้ (Characteristics of Outcomes)</h3>
+              <p>{{ careerLevel.outcomes }}</p>
+            </div>
+            
+            <h3>หน่วยสมรรถนะ (หน่วยสมรรถนะทั้งหมดของคุณวุฒิวิชาชีพนี้)</h3>
+    
+
+            <div *ngIf="careerLevel" class="certification-text">
+              <div *ngFor="let i of careerLevel.unit_code; let index = index" class="row">
+                <div class="col-2">
+                  <div class="career-info" (click)="showCareerDetail(careerLevel.id_unit_code[index])">
+                    <div style="display: flex; align-items: center;">
+                      <p style="font-size: 14px; margin-right: 5px;">{{ chartUnitcodes[index]?.percentage ? chartUnitcodes[index]?.percentage.toFixed() + '%' : '0%' }}</p>
+                      <p-progressBar [value]="chartUnitcodes[index]?.percentage || 0" [showValue]="false"
+                        [style]="{ 'height': '12px', 'width': '50px', 'margin-right': '5px' }"></p-progressBar>
+                    </div>
+                  </div>
+                </div>
+                
+                
+                <div class="col-10" (click)="showCareerDetail(careerLevel.id_unit_code[index])">
+                  <p>{{ careerLevel.unit_code[index] }} - {{ careerLevel.name[index] }}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<div class="custom-container">
+  <div class="custom-text">
+    © 2023 Department of Electrical and Computer Engineering Faculty of Engineering Naresuan University
+  </div>
+  <div class="custom-text">
+    reference <a href="https://tpqi-net.tpqi.go.th/home/occ/industrialInfo/ICT" target="_blank">สถาบันคุณวุฒิวิชาชีพ (องค์การมหาชน)</a>
+  </div>
+</div>
+
+
+

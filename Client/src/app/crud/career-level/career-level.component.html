@@ -1,0 +1,45 @@
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="container mt-5">
+            <h2>Level Management</h2>
+            <form class="mb-4" (ngSubmit)="onSubmitForm()">
+                <label for="career" class="form-label">Career:</label>
+                <select id="career" name="career" class="form-select" [(ngModel)]="formCareerLevelData.id_career">
+                <option *ngFor="let career of careers" [value]="career.id_career">{{ career.name_career }}</option>
+                </select>
+            
+                <label for="level" class="form-label">Level:</label>
+                <select id="level" name="level"  class="form-select" [(ngModel)]="formCareerLevelData.id_level">
+                <option *ngFor="let level of levels" [value]="level.id_level">{{ level.name_level }}</option>
+                </select>
+            
+                <button class="btn btn-primary mt-3" type="submit">{{ editIdCareerLevel !== null ? 'Update' : 'Create' }}</button>
+            </form>
+            <div class="container mt-4">
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>ลำดับ</th>
+                            <th>ชื่อ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let careerslevel of careersLevels">
+                            <td>{{ careerslevel.id_career_level }}</td>
+                            <td>{{ careerslevel.name_career }}</td>
+                            <td>{{ careerslevel.name_level }}</td>
+                            <td>
+                                <button (click)="onEdit(careerslevel)" class="btn btn-warning btn-sm">Edit</button>
+                                <button (click)="onDelete(careerslevel.id_career_level)" class="btn btn-danger btn-sm ml-1">Delete</button>
+                            </td>
+                            
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+  

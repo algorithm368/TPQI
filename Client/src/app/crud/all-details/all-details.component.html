@@ -1,0 +1,44 @@
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="container p-4">
+            <form class="mb-4" (ngSubmit)="onSubmitForm()">
+                <label for="careerlevel" class="form-label">อาชีพ:</label>
+                <select id="careerlevel" name="careerlevel" class="form-select" [(ngModel)]="formallDetailsData.id_career_level">
+                    <option *ngFor="let careerlevel of careerlevelOptions" [value]="careerlevel.id_career_level">{{ careerlevel.name_career }} {{ careerlevel.name_level }}</option>
+                </select>
+            
+                <label for="detail" class="form-label mt-3">รายละเอียดของระดับอาชีพ:</label>
+                <select id="detail" name="detail" class="form-select" [(ngModel)]="formallDetailsData.id_d">
+                    <option *ngFor="let detail of detailsOptions" [value]="detail.id_d">{{ detail.outcomes | slice:0:175 }}</option>
+                </select>
+            
+                <button class="btn btn-primary mt-3" type="submit">{{ editIdAllDetails !== null ? 'Update' : 'Create' }}</button>
+            </form>
+
+            <div class="container mt-4">
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>ลำดับ</th>
+                            <th>อาชีพ</th>
+                            <th>รายละเอียดของระดับอาชีพ</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let alldetail of alldetails">
+                            <td>{{ alldetail.id_all_details }}</td>
+                            <td>{{ alldetail.name_career }} {{ alldetail.name_level }}</td>
+                            <td>{{ alldetail.outcomes }}</td>
+                            <td>
+                                <button (click)="onEdit(alldetail)" class="btn btn-warning btn-sm">Edit</button>
+                                <button (click)="onDelete(alldetail.id_career_level)" class="btn btn-danger btn-sm ml-1">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

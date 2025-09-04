@@ -1,0 +1,45 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Prompt&family=Roboto&display=swap');
+
+h2 {
+    font-size: 24px;
+    font-family: 'Prompt', sans-serif;
+
+}
+
+h4 {
+    font-size: 18px;
+    font-family: 'Prompt', sans-serif;
+    color: #ffffffe8;
+
+}
+
+a {
+    font-size: 15px;
+    font-family: 'Prompt', sans-serif;
+    color: #ffffffe8;
+
+}
+
+
+p {
+    font-size: 18px;
+    font-family: 'Prompt', sans-serif;
+    line-height: 1.5;
+}
+
+.custom-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 1rem; /* เพิ่มหรือลดตามความต้องการ */
+    background-color: #B5251A;
+    color: white;
+  }
+  
+  .custom-text {
+    margin-bottom: 0.5rem;
+  }

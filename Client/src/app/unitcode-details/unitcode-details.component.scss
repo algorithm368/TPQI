@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt&family=Roboto&display=swap');
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 90%;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+  
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}
+
+.image-container {
+  position: relative;
+}
+
+h2 {
+  font-size: 20px;
+  font-family: 'Prompt', sans-serif;
+  margin: 25px;
+} 
+h3 {
+  font-size: 16px;
+  font-family: 'Prompt', sans-serif;
+  margin: 25px;
+  font-weight: bold;
+}
+
+p {
+  font-size: 16px;
+  font-family: 'Prompt', sans-serif;
+  margin: 25px;
+  padding-left: 20px;
+}
+
+label {
+  font-size: 14px;
+  font-family: 'Prompt', sans-serif;
+
+}
+
+span {
+  font-size: 14px;
+  font-family: 'Prompt', sans-serif;
+  margin: 25px;
+  padding-left: 20px;
+}
+
+.certification-text p {
+  font-size: 16px;
+  font-family: 'Prompt', sans-serif;
+  line-height: 0.5; /* Adjust the line height */
+}
+
+.overlay-text {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 25%; /* Adjust the top position as needed */
+  left: 50%; /* Adjust the left position as needed */
+  transform: translate(-50%, -50%); /* Center the text */
+  text-align: center;
+  font-size: 24px; /* Adjust the font size as needed */
+  font-weight: bold; /* Optionally set font weight */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optionally add text shadow for better visibility */
+  font-family: 'Prompt', sans-serif; /* Change font family */
+}
+
+.overlay-text p {
+  font-size: 45px;
+  font-family: 'Prompt', sans-serif;
+  line-height: 1.5; /* Adjust the line height */
+  color: rgb(255, 255, 255); /* Set text color */
+}
+
+.overlay-text h1 {
+  font-size: 50px;
+  font-family: 'Prompt', sans-serif;
+  line-height: 1.5; /* Adjust the line height */
+  color: rgba(189, 189, 189, 0.555); /* Set text color */
+}
+
+.custom-span {
+  max-width: 300px; /* Adjust the width as needed */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Optional: Show ellipsis (...) for overflowed text */
+  white-space: nowrap; /* Prevent text from wrapping to the next line */
+
+}
+
+.card-body {
+  margin-left: 30px;
+}
+.custom-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 1rem; /* เพิ่มหรือลดตามความต้องการ */
+  background-color: #B5251A;
+  color: white;
+}
+
+.custom-text {
+  margin-bottom: 0.5rem;
+}
+a {
+  color: #ffffff;
+
+}

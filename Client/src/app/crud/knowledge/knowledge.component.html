@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="card mt-5">
+        <div class="container">
+    
+            <div class="card-body">
+                <h2>Knowledge Management</h2>
+                
+                <!-- Form for creating and updating records -->
+                <form (ngSubmit)="onSubmitKnowlege()" class="mt-3">
+                    <div class="form-group">
+                        <label for="name_knowlege">ความรู้:</label>
+                        <textarea type="text" id="name_knowlege" name="name_knowlege" [(ngModel)]="formknowlegeData.name_knowlege" class="form-control" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+
+                <div class="container mt-5">
+                    <table class="table table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>ลำดับ</th>
+                                <th>ความรู้</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let knowlege of knowleges">
+                                <td>{{ knowlege.id_knowlege }}</td>
+                                <td>{{ knowlege.name_knowlege }}</td>
+                                <td>
+                                    <button (click)="editKnowlege(knowlege)" class="btn btn-warning btn-sm">Edit</button>
+                                    
+                                    <button (click)="deleteKnowlege(knowlege.id_knowlege)" class="btn btn-danger btn-sm ml-1">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+  
+
+  
+  

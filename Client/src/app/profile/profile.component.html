@@ -1,0 +1,143 @@
+<app-navbar></app-navbar>
+
+
+  <div class="container py-4">
+    <div class="row">
+      <div class="col">
+        <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
+          <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item" *ngIf="userProfile" ><a (click)="navigateToUpdatePage(userProfile.id)">แก้ไขโปรไฟล์</a></li>
+            <li class="breadcrumb-item" (click)="downloadPDF()">ดาวน์โหลด PDF</li>
+            <li class="breadcrumb-item" (click)="navigateToForgotPassword()">เปลี่ยนรหัสผ่าน</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <div #profileContent>
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="card mb-4">
+            <div class="card-body text-center">
+
+              <div *ngIf="userProfile">
+                <img [src]="'http://localhost:3000/uploads/' + userProfile.profileimage" alt="User Profile Image"
+                class="rounded mx-auto d-block mt-2" style="width: 150px; height: 200px;">
+              </div>
+            </div>
+          </div>
+          <div class="card mb-4 mb-lg-0">
+            <div class="card-body m-4">
+              <div class="row">
+                <div class="col-sm-5">
+                  <p class="mb-0">ID student :</p>
+                </div>
+                <div class="col-sm-7" *ngIf="userProfile">
+                  <p class="text-muted mb-0">{{ userProfile.id }}</p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-5">
+                  <p class="mb-0">ชื่อ นามสกุล(TH) :</p>
+                </div>
+                <div class="col-sm-7" *ngIf="userProfile">
+                  <p class="text-muted mb-0">{{ userProfile.firstNameTH }} {{ userProfile.lastNameTH }}</p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-5">
+                  <p class="mb-0">ชื่อ นามสกุล(EN) :</p>
+                </div>
+                <div class="col-sm-7" *ngIf="userProfile">
+                  <p class="text-muted mb-0">{{ userProfile.firstNameEN }} {{ userProfile.lastNameEN }}</p>
+                </div>
+              </div>
+              <hr>
+
+              <div class="row">
+                <div class="col-sm-5">
+                  <p class="mb-0">Email :</p>
+                </div>
+                <div class="col-sm-7" *ngIf="userProfile">
+                  <p class="text-muted mb-0">{{ userProfile.email }}</p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-5">
+                  <p class="mb-0">Phone :</p>
+                </div>
+                <div class="col-sm-7" *ngIf="userProfile">
+                  <p class="text-muted mb-0">{{ userProfile.phone }}</p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-5">
+                  <p class="mb-0">Line :</p>
+                </div>
+                <div class="col-sm-7" *ngIf="userProfile">
+                  <p class="text-muted mb-0">{{ userProfile.line }}</p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-5">
+                  <p class="mb-0">Address :</p>
+                </div>
+                <div class="col-sm-7" *ngIf="userProfile">
+                  <p class="text-muted mb-0">{{ userProfile.address }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="col">
+            <div class="card mb-4 mb-md-0">
+              <div class="card-body">
+                <div *ngIf="combinedCharts.length > 0; else noDataTemplate">
+                  <div *ngFor="let chart of combinedCharts" class="pie-chart-container" >
+                    <h2 class="pie-chart-title" (click)="showCareerDetail(chart.careerLevelId)">
+                      {{ chart.career.name }} {{ chart.level.name }}</h2>
+                    
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div *ngIf="chart.skillsChartData">
+                          <p-chart type="pie" [data]="chart.skillsChartData"  
+                          [options]="chart.skillsChartData" ></p-chart>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div *ngIf="chart.knowledgeChartData">
+                          <p-chart type="pie" [data]="chart.knowledgeChartData"></p-chart>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <ng-template #noDataTemplate>
+                  <p>No data available to display.</p>
+                </ng-template>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+

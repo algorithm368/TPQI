@@ -1,0 +1,52 @@
+
+
+<div class="container mt-5">
+
+    <div class="card">
+        <div class="container mt-5">
+            <h2>Level Management</h2>
+            <form class="mb-4" (ngSubmit)="onSubmitForm()">
+                <label for="careerlevel" class="form-label" >ระดับอาชีพ:</label>
+                <select id="careerlevel" name="careerlevel" class="form-select" [(ngModel)]="formclskillsData.id_career_level">
+                <option *ngFor="let careerlevel of careerlevelOptions" [value]="careerlevel.id_career_level">
+                    {{ careerlevel.name_career }} {{ careerlevel.name_level }}</option>
+                </select>
+            
+                <label for="skill" class="form-label" >ทักษะ:</label>
+                <select id="skill" name="skill" class="form-select" [(ngModel)]="formclskillsData.id_skill">
+                <option *ngFor="let skill of skillsOptions" [value]="skill.id_skill">
+                    {{ skill.name_skill }}</option>
+                </select>
+            
+                <button class="btn btn-primary mt-3" type="submit">{{ editIdclskills !== null ? 'Update' : 'Create' }}</button>
+            </form>
+            
+
+
+            <div class="container mt-5">
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>ลำดับ</th>
+                            <th>ระดับอาชีพ</th>
+                            <th>ทักษะ</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let clskill of clskills">
+                            <td>{{ clskill.id_cl_skills }}</td>
+                            <td>{{ clskill.name_career }} {{ clskill.name_level }}</td>
+                            <td>{{ clskill.name_skill }}</td>
+                            <td>
+                                <button (click)="onEdit(clskill)" class="btn btn-warning btn-sm">Edit</button>
+                                <button (click)="onDelete(clskill.id_cl_skills)" class="btn btn-danger btn-sm ml-1">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,49 @@
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="container">
+            <h2>Level Management</h2>
+            <form class="mb-4" (ngSubmit)="onSubmitForm()">
+                <label for="careerlevel" class="form-label" >ระดับอาชีพ:</label>
+                <select id="careerlevel" name="careerlevel" class="form-select" [(ngModel)]="formclknowlegesData.id_career_level">
+                <option *ngFor="let careerlevel of careerlevelOptions" [value]="careerlevel.id_career_level">
+                    {{ careerlevel.name_career }} {{ careerlevel.name_level }}</option>
+                </select>
+            
+                <label for="knowledge" class="form-label" >ความรู้:</label>
+                <select id="knowledge" name="knowledge" class="form-select" [(ngModel)]="formclknowlegesData.id_knowlege">
+                <option *ngFor="let knowledge of knowlegesOptions" [value]="knowledge.id_knowlege">
+                    {{ knowledge.name_knowlege }}</option>
+                </select>
+            
+                <button class="btn btn-primary mt-3" type="submit">{{ editIdclknowlege !== null ? 'Update' : 'Create' }}</button>
+            </form>
+            
+
+
+            <div class="container mt-5">
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>ระดับอาชีพ</th>
+                            <th>ความรู้</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let clknowlege of clknowleges">
+                            <td>{{ clknowlege.id_cl_knowlege }}</td>
+                            <td>{{ clknowlege.name_career }} {{ clknowlege.name_level }}</td>
+                            <td>{{ clknowlege.mane_knowlege }}</td>
+                            <td>
+                                <button (click)="onEdit(clknowlege)" class="btn btn-warning btn-sm">Edit</button>
+                                <button (click)="onDelete(clknowlege.id_cl_knowlege)" class="btn btn-danger btn-sm ml-1">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

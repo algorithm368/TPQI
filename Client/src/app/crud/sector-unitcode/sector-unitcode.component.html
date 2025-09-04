@@ -1,0 +1,54 @@
+<div class="container mt-5">
+
+
+    <div class="card">
+        <div class="container mt-5">
+            <h2>Level Management</h2>
+            <form class="mb-4" (ngSubmit)="onSubmitForm()">
+
+
+                <label for="sector" class="form-label" >กลุ่มอาชีพ:</label>
+                <select id="sector" name="sector" class="form-select" [(ngModel)]="formusectorData.id_sector">
+                <option *ngFor="let sector of sectorOptions" [value]="sector.id_sector">
+                    {{ sector.name_sector }} </option>
+                </select>
+
+                <label for="unitcode" class="form-label" >หน่วยสมรรถนะ:</label>
+                <select id="unitcode" name="unitcode" class="form-select" [(ngModel)]="formusectorData.id_unit_code">
+                <option *ngFor="let unitcode of unitcodeOptions" [value]="unitcode.id_unit_code">{{ unitcode.unit_code }} {{ unitcode.name }}</option>
+                </select>
+
+                
+            
+    
+            
+                <button class="btn btn-primary mt-3" type="submit">{{ editIdusector !== null ? 'Update' : 'Create' }}</button>
+            </form>
+            
+
+            <div class="container mt-5">
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>ลำดับ</th>
+                            <th>กลุ่มอาชีพ</th>
+                            <th>หน่วยสมรรถนะ</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let usector of usectors">
+                            <td>{{ usector.id_unit_sector }}</td>
+                            <td>{{ usector.name_sector }}</td>
+                            <td>{{ usector.unit_code }} {{ usector.name }}</td>
+                            <td>
+                                <button (click)="onEdit(usector)" class="btn btn-warning btn-sm">Edit</button>
+                                <button (click)="onDelete(usector.id_unit_sector)" class="btn btn-danger btn-sm ml-1">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
